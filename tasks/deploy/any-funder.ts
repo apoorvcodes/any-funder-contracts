@@ -14,6 +14,7 @@ task('deploy:AnyFunder')
 
     const AnyFunder = await ethers.getContractFactory('AnyFunder');
     const funder = await AnyFunder.connect(signers[0]).deploy(
+      '0x0',
       taskArguments.currency,
       taskArguments.wrappedtoken,
       taskArguments.router

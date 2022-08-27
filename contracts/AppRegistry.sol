@@ -75,6 +75,10 @@ contract AppRegistry is AccessControlEnumerable {
         emit ApplicationRemoved(user, app);
     }
 
+    function getSettings(address user) public view returns (string memory) {
+        return _settings[user];
+    }
+
     function setSettings(address user, string memory settings)
         public
         isOperatorOrOwner(user)
